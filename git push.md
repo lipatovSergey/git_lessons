@@ -21,3 +21,16 @@
 - Tracking configuration is ignored
 - If the remote branch doesn't exist, git will create it automatically
 	- You can also set up tracking on this branch after pushing by using:  `git push -u origin my-feature`. This means future [[git pull]] or [[git push]] on my-feature will automatically use origin/my-feature. With out `-u` tracking wouldn't set automatically.
+
+# How to push from one local branch to a different named remote branch:
+```bash
+git push origin <source>:<destination>
+```
+`source` - local branch we want to push
+`destination` - remote branch where we want to push
+
+**Examples:**
+- `git push origin foo:bar` - Push local foo to remote bar.
+- `git push origin HEAD:experiment` - Push current commit (even detached) to a remote branch experiment.
+- If the destination branch doesn't exist, Git will create it.
+The source can be any Git reference (branch, tag, HEAD, `foo^`, `HEAD~1`, etc.) giving you full control and flexibility.
