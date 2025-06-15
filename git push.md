@@ -33,4 +33,7 @@ git push origin <source>:<destination>
 - `git push origin foo:bar` - Push local foo to remote bar.
 - `git push origin HEAD:experiment` - Push current commit (even detached) to a remote branch experiment.
 - If the destination branch doesn't exist, Git will create it.
+- Git allows to specify "nothing" as `<source>` `git push origin :branch-name` 
+	- Deletes the branch `branch-name` from remote
+	- You push **nothing** into a remote branch, so git deletes it.
 The source can be any Git reference (branch, tag, HEAD, `foo^`, `HEAD~1`, etc.) giving you full control and flexibility.
